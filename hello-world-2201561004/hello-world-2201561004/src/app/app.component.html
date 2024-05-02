@@ -1,0 +1,45 @@
+<div class="book-wrapper">
+  <button (click)="processPreviousBook()" class="button">&#9650;</button>
+  <div class="book-placeholder">
+
+    <div class="book-placeholder--title">
+      Title: {{BookCollection[index].title}}
+    </div>
+
+    <div class="book-placeholder--description">
+      Description: {{BookCollection[index].description}}
+    </div>
+
+    <div class="book-placeholder--author">
+      Author: {{BookCollection[index].author}}
+    </div>
+
+    <div class="book-placeholder--rating">
+      Current rating: {{BookCollection[index].rating}}
+    </div>
+    <div class="book-rating-buttons">
+      <button (click)="processRating(1)" class="button">1</button>
+      <button (click)="processRating(2)" class="button">2</button>
+      <button (click)="processRating(3)" class="button">3</button>
+      <button (click)="processRating(4)" class="button">4</button>
+      <button (click)="processRating(5)" class="button">5</button>
+    </div>
+  </div>
+
+  <button (click)="processNextBook()" class="button">&#9660;</button>
+</div>
+<div class="book-placeholder--edit">
+  <div class="book-placeholder--title">
+    Title: <input [(ngModel)]="Title" type="text" placeholder="Title of book">
+  </div>
+
+  <div class="book-placeholder--description">
+    Description:<textarea [(ngModel)]="Description" style="width: 300px;" rows="9"
+      placeholder="Description of book"></textarea>
+  </div>
+
+  <div class="book-placeholder--author">
+    Author: <input [(ngModel)]="Author" type="text" placeholder="Author of book">
+  </div>
+</div>
+<button (click)="processNewData()" type="submit">Submit changes</button>
